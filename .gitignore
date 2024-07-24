@@ -2,7 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Game Demo\ADT3 - Spooky Farm Game\Library/
+/ADT3 - Spooky Farm Game/Library/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
