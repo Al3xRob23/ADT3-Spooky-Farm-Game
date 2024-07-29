@@ -31,6 +31,5 @@ public enum ItemID
     Key,
     Potion,
     Present,
-    Sword,
-    ds
+    Sword
 }

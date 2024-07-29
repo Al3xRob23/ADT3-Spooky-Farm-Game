@@ -19,9 +19,13 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.K))
 		{
 			TakeDamage(20);
+		}
+			if ( currentHealth <= 0)
+		{
+			print("Your'e Dead");
 		}
     }
 
@@ -31,4 +35,12 @@ public class PlayerHealth : MonoBehaviour
 
 		healthBar.SetHealth(currentHealth);
 	}
+
+	private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            currentHealth -=10 ;
+        }
+    }
 }
