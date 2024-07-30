@@ -8,8 +8,11 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
 
-        SimpleFPSController refScript = GetComponent<CharacterController>();
-        characterController = GetComponent<CharacterController>();
+        //SimpleFPSController refScript = GetComponent<CharacterController>();
+        //characterController = GetComponent<CharacterController>();
+
+        //gameObject.GetComponent<characterController>();
+        //characterController = gameObject.GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         Cursor.visible = true;
     }
@@ -18,6 +21,7 @@ public class InventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
+            Time.timeScale = 0.0f;
             panel.SetActive(!panel.activeInHierarchy);
 
         }

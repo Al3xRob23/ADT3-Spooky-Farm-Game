@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 	public int currentHealth;
 
 	public HealthBar healthBar;
+	public Collider playerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +37,12 @@ public class PlayerHealth : MonoBehaviour
 		healthBar.SetHealth(currentHealth);
 	}
 
-	private void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision collision)
     {
-        if(other.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
-            currentHealth -=10 ;
+			currentHealth -= 10;
+			Debug.Log("Enemy Detected");
         }
     }
 }
