@@ -788,11 +788,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  sprintSpeed: 10
+  sprintSpeed: 4
   mouseSensitivity: 2
   Stamina: 10
   MaxStamina: 10
-  sprintMultiplier: 0.5
+  sprintMultiplier: 0.2
 --- !u!114 &959570473
 MonoBehaviour:
   m_ObjectHideFlags: 0

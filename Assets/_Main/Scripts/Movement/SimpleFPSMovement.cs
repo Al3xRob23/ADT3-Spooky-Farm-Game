@@ -14,7 +14,7 @@ public class SimpleFPSController : MonoBehaviour
 
     public float Stamina = 10.0f;
 public float MaxStamina = 10.0f;
-public float sprintMultiplier;
+public float currentSpeed;
 
 //---------------------------------------------------------
 private float StaminaRegenTimer = 0.0f;
@@ -32,7 +32,7 @@ private const float StaminaTimeToRegen = 3.0f;
 
     void Update()
     {
-        
+         currentSpeed = movementSpeed;
         // Rotation (Mouse Look)
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -53,6 +53,7 @@ private const float StaminaTimeToRegen = 3.0f;
         //Sprinting
 
             bool isRunning = Input.GetKey(KeyCode.LeftShift);
+            bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
     if (isRunning)
     {
@@ -66,6 +67,17 @@ private const float StaminaTimeToRegen = 3.0f;
         else
             StaminaRegenTimer += Time.deltaTime;
     }
-
+    if (isRunning )
+    {
+        movementSpeed = sprintSpeed;
+    }
+    if (isRunning && Stamina == 0.0f)
+    {
+        movementSpeed = 2f;
+    }
+    else if (isNotRunning)
+    {
+        movementSpeed = 3.0f;
+    }
     }
 }
