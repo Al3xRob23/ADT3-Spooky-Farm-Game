@@ -11,8 +11,8 @@ public class HUDController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             playerhud.SetActive(!playerhud.activeInHierarchy);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
 
         }
     }
