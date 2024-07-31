@@ -792,7 +792,7 @@ MonoBehaviour:
   mouseSensitivity: 2
   Stamina: 10
   MaxStamina: 10
-  sprintMultiplier: 0.2
+  currentSpeed: 0
 --- !u!114 &959570473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 311035887}
+  characterController: {fileID: 959570471}
 --- !u!114 &959570476
 MonoBehaviour:
   m_ObjectHideFlags: 0
