@@ -5,11 +5,12 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     [SerializeField] GameObject panel;
+    [SerializeField] CharacterController characterController;
     void Start()
     {
 
         //SimpleFPSController refScript = GetComponent<CharacterController>();
-        //characterController = GetComponent<CharacterController>();
+        // characterController = GetComponent<CharacterController>();
 
         //gameObject.GetComponent<characterController>();
         //characterController = gameObject.GetComponent<CharacterController>();
