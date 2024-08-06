@@ -2,8 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(Rigidbody))]
 public class SimpleFPSController : MonoBehaviour
 {
+
+    public bool isGrounded;
 
     public float movementSpeed = 5.0f;
     public float sprintSpeed = 7.0f;
@@ -28,7 +31,9 @@ private const float StaminaTimeToRegen = 3.0f;
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
+
     }
+
 
     void Update()
     {
@@ -55,6 +60,7 @@ private const float StaminaTimeToRegen = 3.0f;
             bool isRunning = Input.GetKey(KeyCode.LeftShift);
             bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
+
     if (isRunning)
     {
         Stamina = Mathf.Clamp(Stamina - (StaminaDecreasePerFrame * Time.deltaTime), 0.0f, MaxStamina);
@@ -80,4 +86,13 @@ private const float StaminaTimeToRegen = 3.0f;
         movementSpeed = 3.0f;
     }
     }
+
+void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+			isGrounded = true;
+        }
+    }
+    
 }
