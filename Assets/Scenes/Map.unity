@@ -660,6 +660,7 @@ GameObject:
   - component: {fileID: 143999721}
   - component: {fileID: 143999723}
   - component: {fileID: 143999722}
+  - component: {fileID: 143999724}
   m_Layer: 5
   m_Name: InventoryGrid
   m_TagString: Untagged
@@ -724,6 +725,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143999720}
   m_CullTransparentMesh: 1
+--- !u!114 &143999724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143999720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1001 &170057158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -791,6 +816,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48616f6c620ad0346a8e0b061ee6f795, type: 3}
       insertIndex: -1
       addedObject: {fileID: 428185931}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48616f6c620ad0346a8e0b061ee6f795, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 428185934}
   m_SourcePrefab: {fileID: 100100000, guid: 48616f6c620ad0346a8e0b061ee6f795, type: 3}
 --- !u!1 &172111724
 GameObject:
@@ -1195,7 +1223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &311035888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0e9e19fd9c4e44ba5bc1ea480b2d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryItemPrefab: {fileID: 0}
+  inventoryItemPrefab: {fileID: 5748360624297815154, guid: 9ccc2b774cce3654587949847205ef97, type: 3}
   inventoryGridContainer: {fileID: 143999721}
 --- !u!1 &341080578
 GameObject:
@@ -1598,6 +1626,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.51, z: 1.66}
   m_Center: {x: 0.000001206994, y: 0, z: 0.49779806}
+--- !u!114 &428185934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428185926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ec196e1711c4244842c7eb0aadf74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
 --- !u!1 &503664102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,6 +2540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59ec277516017d4ea72c59ed61fb6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 311035892}
 --- !u!136 &959570479
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3745,7 +3787,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 7f982bbb6951b3548a445b2d39a6b838, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 1
+  weight: 0.935
   priority: 0
 --- !u!65 &1449527650
 BoxCollider:

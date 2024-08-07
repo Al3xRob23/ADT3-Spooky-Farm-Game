@@ -9,12 +9,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private InventoryItem inventoryItemPrefab;
     [SerializeField] private Transform inventoryGridContainer;
 
-    public IEnumerator Start()
+    public void Start()
     {
-        yield return new WaitForSeconds(1f);
-        AddItem(ItemID.Key);
-        yield return new WaitForSeconds(1f);
-        AddItem(ItemID.Potion);
+        gameObject.SetActive(false);
     }
 
     public void AddItem(ItemID item)
@@ -31,5 +28,6 @@ public enum ItemID
     Key,
     Potion,
     Present,
-    Sword
+    Sword,
+    Pitchfork
 }
