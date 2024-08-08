@@ -6,6 +6,7 @@ public class InventoryController : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     [SerializeField] CharacterController characterController;
+    public bool inventoryOpen;
     void Start()
     {
 
@@ -16,15 +17,26 @@ public class InventoryController : MonoBehaviour
         //characterController = gameObject.GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         Cursor.visible = true;
+        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Time.timeScale = 0.0f;
             panel.SetActive(!panel.activeInHierarchy);
-
+            if (panel.activeInHierarchy)
+            {
+                // We know that the game is paused.
+                Time.timeScale = 0.0f;
+                inventoryOpen = true;
+            }
+            else
+            {
+                // We know that the game has been resumed.
+                Time.timeScale = 1.0f;
+                inventoryOpen = false;
+            }
         }
     }
 }

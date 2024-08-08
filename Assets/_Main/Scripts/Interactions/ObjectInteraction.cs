@@ -26,7 +26,6 @@ public class ObjectInteraction : MonoBehaviour
                     inventoryUI.AddItem(itemHit.id);
                     hit.collider.gameObject.SetActive(false);
                 }
-                    
             }
                 
         }   

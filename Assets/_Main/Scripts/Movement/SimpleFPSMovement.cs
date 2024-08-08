@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Rigidbody))]
 public class SimpleFPSController : MonoBehaviour
 {
 
@@ -39,8 +38,8 @@ private const float StaminaTimeToRegen = 3.0f;
     {
          currentSpeed = movementSpeed;
         // Rotation (Mouse Look)
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         verticalRotation += mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
         transform.Rotate(Vector3.up * mouseX);
