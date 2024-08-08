@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
+      name: alpaca1
     second: {fileID: 2100000, guid: b448d42a018dace4b9fea7218508c8b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alpaca2
+    second: {fileID: 2100000, guid: 33485c965a74c6841b794aee6a991fad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alpaca3
+    second: {fileID: 2100000, guid: f21c6e9526fc06e42805401999c6d1ba, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

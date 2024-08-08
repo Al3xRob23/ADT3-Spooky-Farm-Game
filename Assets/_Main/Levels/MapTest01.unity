@@ -15342,6 +15342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59ec277516017d4ea72c59ed61fb6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 0}
 --- !u!136 &699622064
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32396,12 +32397,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 78faccc362a395a47b4602a4422af400, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.098401
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78faccc362a395a47b4602a4422af400, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.098401
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78faccc362a395a47b4602a4422af400, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.098401
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78faccc362a395a47b4602a4422af400, type: 3}
       propertyPath: m_LocalPosition.x
       value: 847.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78faccc362a395a47b4602a4422af400, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000005364418
+      value: 0.0956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78faccc362a395a47b4602a4422af400, type: 3}
       propertyPath: m_LocalPosition.z

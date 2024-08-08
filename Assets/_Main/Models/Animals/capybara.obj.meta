@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
+      name: capybara1
     second: {fileID: 2100000, guid: 90b368e748e6d084fac4d91d10bcf7d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: capybara2
+    second: {fileID: 2100000, guid: 0b11900e10ee63b409b8c348940d0e12, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
