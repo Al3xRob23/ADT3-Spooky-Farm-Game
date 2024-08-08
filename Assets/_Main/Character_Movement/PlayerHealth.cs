@@ -24,10 +24,7 @@ public class PlayerHealth : MonoBehaviour
 		{
 			TakeDamage(20);
 		}
-			if ( currentHealth <= 0)
-		{
-			print("Your'e Dead");
-		}
+			
     }
 
 	void TakeDamage(int damage)
@@ -35,14 +32,21 @@ public class PlayerHealth : MonoBehaviour
 		currentHealth -= damage;
 
 		healthBar.SetHealth(currentHealth);
-	}
 
-	void OnCollisionEnter(Collision collision)
+        if (currentHealth <= 0)
+        {
+            print("Your'e Dead");
+            Time.timeScale = 0f;
+        }
+    }
+
+	void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Enemy")
         {
-			currentHealth -= 10;
+			//currentHealth -= 10;
 			Debug.Log("Enemy Detected");
+			TakeDamage(10);
         }
     }
 }
