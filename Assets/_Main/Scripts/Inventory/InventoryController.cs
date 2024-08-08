@@ -30,12 +30,16 @@ public class InventoryController : MonoBehaviour
                 // We know that the game is paused.
                 Time.timeScale = 0.0f;
                 inventoryOpen = true;
+                Cursor.lockState = CursorLockMode.Confined; 
+                Cursor.visible = true;
             }
             else
             {
                 // We know that the game has been resumed.
                 Time.timeScale = 1.0f;
                 inventoryOpen = false;
+                Cursor.lockState = CursorLockMode.Locked; 
+                Cursor.visible = false;
             }
         }
     }

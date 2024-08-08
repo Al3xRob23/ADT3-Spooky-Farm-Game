@@ -8,12 +8,12 @@ public class HUDController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            playerhud.SetActive(!playerhud.activeInHierarchy);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    playerhud.SetActive(!playerhud.activeInHierarchy);
+        //    Cursor.visible = false;
+        //    Cursor.lockState = CursorLockMode.Locked;
 
-        }
+        //}
     }
 }
