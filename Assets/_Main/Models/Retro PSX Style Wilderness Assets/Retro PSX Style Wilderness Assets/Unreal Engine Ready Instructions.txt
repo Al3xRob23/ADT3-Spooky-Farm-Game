@@ -1,0 +1,14 @@
+Simply drag the "Retro_PSX_Style_Wilderness_Assets" folder which is found at the following directory of this file "Retro PSX Style Wilderness Assets\Unreal Engine Ready\Content", into the "Content" folder of your chosen Unreal Engine project's directory and your ready to go!
+
+
+Step by Step Guide:
+
+1. Locate the directory of the Unreal Engine project in which you wish to import the PSX Style Wilderness Assets.
+
+2. Once at the directory open the folder named "Content".
+
+3. Go to the following directory of in the Retro PSX Style Wilderness Assets file: "Retro PSX Style Wilderness Assets\Unreal Engine Ready\Content".
+
+4. Drag and drop the "Retro_PSX_Style_Wilderness_Assets" folder in the "Content" folder of the Unreal Engine project.
+
+5. Enjoy!
