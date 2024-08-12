@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
 	public HealthBar healthBar;
 	public Collider playerCollider;
 
+    public GameObject deathScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         {
             print("Your'e Dead");
             Time.timeScale = 0f;
+            deathScreen.GetComponent<DeathScreen>().ShowMenu();
         }
     }
 

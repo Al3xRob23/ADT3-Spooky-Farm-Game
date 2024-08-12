@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
+    [SerializeField] GameObject panel;
+
 
     public void Start()
     {
@@ -15,11 +17,20 @@ public class DeathScreen : MonoBehaviour
     public void TryAgain()
     {
         SceneManager.LoadScene(0);
+        Debug.Log("Respawning");
+        Time.timeScale = 1f;
     }
 
     public void GoToMenu()
     {
         //SceneManager.LoadScene(1);
-        Application.Quit();
+        Debug.Log("Quitting");
+        //Application.Quit();
+    }
+    public void ShowMenu()
+    {
+        panel.SetActive(!panel.activeInHierarchy);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 }
