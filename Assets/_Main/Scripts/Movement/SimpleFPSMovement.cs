@@ -27,7 +27,7 @@ private const float StaminaIncreasePerFrame = 5.0f;
 private const float StaminaTimeToRegen = 3.0f;
 
     //Animations
-    public Animator animator;
+    //public Animator animator;
 
     void Start()
     {
@@ -88,14 +88,14 @@ private const float StaminaTimeToRegen = 3.0f;
         movementSpeed = 3.0f;
     }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            animator.SetBool("isStabbing", true);
-        }
-        else
-        {
-            animator.SetBool("isStabbing", false);
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
+        //{
+        //    animator.SetBool("isStabbing", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("isStabbing", false);
+        //}
     }
 
     void OnCollisionStay(Collision collision)
