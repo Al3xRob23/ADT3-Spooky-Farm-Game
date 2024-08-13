@@ -26,6 +26,9 @@ private const float StaminaDecreasePerFrame = 1.0f;
 private const float StaminaIncreasePerFrame = 5.0f;
 private const float StaminaTimeToRegen = 3.0f;
 
+    //Animations
+    public Animator animator;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -84,9 +87,18 @@ private const float StaminaTimeToRegen = 3.0f;
     {
         movementSpeed = 3.0f;
     }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            animator.SetBool("isStabbing", true);
+        }
+        else
+        {
+            animator.SetBool("isStabbing", false);
+        }
     }
 
-void OnCollisionStay(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.tag == "Ground")
         {
