@@ -33,3 +33,11 @@ MonoBehaviour:
     ItemSprite: {fileID: 21300000, guid: f12e26f13a4fd0f46b7fd51ab16c666c, type: 3}
     ItemName: Shotgun
     ItemDescription: Present
+  - ItemID: 5
+    ItemSprite: {fileID: 21300000, guid: 65feedbf35d94a74a9a1a3beb5557f07, type: 3}
+    ItemName: Zombie Head
+    ItemDescription: Present
+  - ItemID: 6
+    ItemSprite: {fileID: 21300000, guid: 4ac0eebe324b19843a9977ab375ab68a, type: 3}
+    ItemName: Cheeseburger
+    ItemDescription: Present

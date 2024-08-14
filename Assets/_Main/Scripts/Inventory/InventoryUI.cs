@@ -29,5 +29,7 @@ public enum ItemID
     MedicPack,
     AmmoPack,
     Shotgun,
-    Pitchfork
+    Pitchfork,
+    ZombieHead,
+    Burger
 }
