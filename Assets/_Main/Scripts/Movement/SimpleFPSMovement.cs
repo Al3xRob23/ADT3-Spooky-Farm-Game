@@ -27,7 +27,7 @@ private const float StaminaIncreasePerFrame = 5.0f;
 private const float StaminaTimeToRegen = 3.0f;
 
     //Animations
-    //public Animator animator;
+    public Animator animator;
 
     void Start()
     {
@@ -63,39 +63,39 @@ private const float StaminaTimeToRegen = 3.0f;
             bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
 
-    if (isRunning)
-    {
-        Stamina = Mathf.Clamp(Stamina - (StaminaDecreasePerFrame * Time.deltaTime), 0.0f, MaxStamina);
-        StaminaRegenTimer = 2.0f;
-    }
-    else if (Stamina < MaxStamina)
-    {
-        if (StaminaRegenTimer >= StaminaTimeToRegen)
-            Stamina = Mathf.Clamp(Stamina + (StaminaIncreasePerFrame * Time.deltaTime), 1.0f, MaxStamina);
-        else
-            StaminaRegenTimer += Time.deltaTime;
-    }
-    if (isRunning )
-    {
-        movementSpeed = sprintSpeed;
-    }
-    if (isRunning && Stamina == 0.0f)
-    {
-        movementSpeed = 2f;
-    }
-    else if (isNotRunning)
-    {
-        movementSpeed = 3.0f;
-    }
+        if (isRunning)
+        {
+            Stamina = Mathf.Clamp(Stamina - (StaminaDecreasePerFrame * Time.deltaTime), 0.0f, MaxStamina);
+            StaminaRegenTimer = 2.0f;
+        }
+        else if (Stamina < MaxStamina)
+        {
+            if (StaminaRegenTimer >= StaminaTimeToRegen)
+                Stamina = Mathf.Clamp(Stamina + (StaminaIncreasePerFrame * Time.deltaTime), 1.0f, MaxStamina);
+            else
+                StaminaRegenTimer += Time.deltaTime;
+        }
+        if (isRunning )
+        {
+            movementSpeed = sprintSpeed;
+        }
+        if (isRunning && Stamina == 0.0f)
+        {
+            movementSpeed = 2f;
+        }
+        else if (isNotRunning)
+        {
+            movementSpeed = 3.0f;
+        }
 
-        //if (Input.GetKeyDown(KeyCode.Mouse0))
-        //{
-        //    animator.SetBool("isStabbing", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("isStabbing", false);
-        //}
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            animator.SetBool("isStabbing", true);
+        }
+        else
+        {
+            animator.SetBool("isStabbing", false);
+        }
     }
 
     void OnCollisionStay(Collision collision)
