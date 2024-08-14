@@ -26,8 +26,8 @@ public class InventoryUI : MonoBehaviour
 public enum ItemID
 {
     Key,
-    Potion,
-    Present,
-    Sword,
+    MedicPack,
+    AmmoPack,
+    Shotgun,
     Pitchfork
 }
