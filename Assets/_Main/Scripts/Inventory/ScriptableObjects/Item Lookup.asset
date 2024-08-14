@@ -18,14 +18,18 @@ MonoBehaviour:
     ItemName: Key
     ItemDescription: A Key
   - ItemID: 1
-    ItemSprite: {fileID: 1849659584, guid: 8ddbce9fd7d890b4eb2a6223b0f429fb, type: 3}
+    ItemSprite: {fileID: 21300000, guid: 4f6bf8c38f95c1b48954a905303db063, type: 3}
     ItemName: Potion
     ItemDescription: A Potion
   - ItemID: 4
-    ItemSprite: {fileID: 21300000, guid: 417e6af19e1f44d4a937975e60c5ac65, type: 3}
+    ItemSprite: {fileID: 21300000, guid: 49d3993c9a0c8d3489e8574799a6e425, type: 3}
     ItemName: Pitchfork
     ItemDescription: Starting Weapon
   - ItemID: 2
-    ItemSprite: {fileID: 21300000, guid: 397cee5a7ade9b5449a790e4ca0801b9, type: 3}
-    ItemName: Present
+    ItemSprite: {fileID: 21300000, guid: cf646ed7c1ef48c40afdacc14ffe1860, type: 3}
+    ItemName: Ammo
+    ItemDescription: Present
+  - ItemID: 3
+    ItemSprite: {fileID: 21300000, guid: f12e26f13a4fd0f46b7fd51ab16c666c, type: 3}
+    ItemName: Shotgun
     ItemDescription: Present
