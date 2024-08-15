@@ -23,10 +23,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (seesPlayer == true)
         {
-            transform.parent.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, Time.deltaTime * speed);
+            transform.parent.position = Vector3.MoveTowards(transform.parent.position, playerPos.transform.position, Time.deltaTime * speed);
             // The step size is equal to speed times frame time.
             float singleStep = rotationSpeed * Time.deltaTime;
-            transform.forward = Vector3.RotateTowards(transform.forward, playerPos.position, singleStep, 5.0f);
+            transform.forward = Vector3.RotateTowards(transform.forward, playerPos.position, singleStep, 0.0f);
         }
     }
 
