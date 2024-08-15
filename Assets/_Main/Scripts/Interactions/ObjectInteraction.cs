@@ -6,6 +6,7 @@ public class ObjectInteraction : MonoBehaviour
 {
 
     public InventoryUI inventoryUI;
+    public Transform camera;
     
     void Update() 
     {
@@ -15,9 +16,9 @@ public class ObjectInteraction : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 Debug.Log("Interacted with: " + hit.collider.gameObject.name);
 
                 WorldItem itemHit = hit.collider.GetComponent<WorldItem>();

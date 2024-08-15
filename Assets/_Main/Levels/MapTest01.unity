@@ -16433,7 +16433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &380806753
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61564,6 +61564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ready Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ab74ded239afaa545979c56e455d6562, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2227018929301391435, guid: ab74ded239afaa545979c56e455d6562, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -88617,6 +88621,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3959495457488524474, guid: e012a532abe60db4d8ba1e208002196a, type: 3}
   m_PrefabInstance: {fileID: 7787070150797359097}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1905711385 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5586255141400964438, guid: e012a532abe60db4d8ba1e208002196a, type: 3}
+  m_PrefabInstance: {fileID: 7787070150797359097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1905867148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101039,7 +101048,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 390756249856595376, guid: e012a532abe60db4d8ba1e208002196a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 390756249856595376, guid: e012a532abe60db4d8ba1e208002196a, type: 3}
       propertyPath: m_Center.y
@@ -101105,6 +101114,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.207
       objectReference: {fileID: 0}
+    - target: {fileID: 7822527790376071427, guid: e012a532abe60db4d8ba1e208002196a, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1905711385}
     - target: {fileID: 7822527790376071427, guid: e012a532abe60db4d8ba1e208002196a, type: 3}
       propertyPath: inventoryUI
       value: 
