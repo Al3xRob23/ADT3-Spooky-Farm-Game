@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectInteraction : MonoBehaviour 
 {
-
     public InventoryUI inventoryUI;
     public Transform camera;
     
@@ -24,8 +24,15 @@ public class ObjectInteraction : MonoBehaviour
                 WorldItem itemHit = hit.collider.GetComponent<WorldItem>();
                 if (itemHit != null)
                 {
-                    inventoryUI.AddItem(itemHit.id);
-                    hit.collider.gameObject.SetActive(false);
+                    if (itemHit.IsCollectableByInteraction)
+                    {
+                        itemHit.CollectItem();
+                    }
+                }
+
+                if (itemHit.TryGetComponent(out ItemRequirement itemReq))
+                {
+                    itemReq.AttemptInteraction();
                 }
             }
                 
