@@ -41,3 +41,11 @@ MonoBehaviour:
     ItemSprite: {fileID: 21300000, guid: 4ac0eebe324b19843a9977ab375ab68a, type: 3}
     ItemName: Cheeseburger
     ItemDescription: Present
+  - ItemID: 7
+    ItemSprite: {fileID: 21300000, guid: 1858c3e7fa1f6d448b4ca4bad65215c6, type: 3}
+    ItemName: Cursed Egg
+    ItemDescription: It's Cursed
+  - ItemID: 8
+    ItemSprite: {fileID: 21300000, guid: 520e04a9317e3b147a45030017d6e968, type: 3}
+    ItemName: Collecable Zombie Figure
+    ItemDescription: How'd this get here?

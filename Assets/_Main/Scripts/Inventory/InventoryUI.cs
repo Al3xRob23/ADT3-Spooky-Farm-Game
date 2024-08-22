@@ -36,5 +36,7 @@ public enum ItemID
     Shotgun,
     Pitchfork,
     ZombieHead,
-    Burger
+    Burger,
+    CursedEgg,
+    CollectableFigures
 }
