@@ -16,7 +16,7 @@ public class DeathScreen : MonoBehaviour
 
     public void TryAgain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Debug.Log("Respawning");
         Time.timeScale = 1f;
     }

@@ -58,6 +58,7 @@ MonoBehaviour:
   Stamina: 10
   MaxStamina: 10
   currentSpeed: 0
+  animator: {fileID: 0}
 --- !u!143 &2328898461062614418
 CharacterController:
   m_ObjectHideFlags: 0
@@ -165,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &7369847018998746122
 GameObject:
   m_ObjectHideFlags: 0
