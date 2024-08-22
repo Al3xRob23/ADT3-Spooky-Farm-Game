@@ -7,7 +7,8 @@ public class ObjectInteraction : MonoBehaviour
 {
     public InventoryUI inventoryUI;
     public Transform camera;
-    
+    #pragma warning disable 0108
+
     void Update() 
     {
         int layerMask = 1 << 5;
@@ -21,18 +22,23 @@ public class ObjectInteraction : MonoBehaviour
                 Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 Debug.Log("Interacted with: " + hit.collider.gameObject.name);
 
-                WorldItem itemHit = hit.collider.GetComponent<WorldItem>();
-                if (itemHit != null)
+                WorldItem hitWorldItem = hit.collider.GetComponent<WorldItem>();
+                if (hitWorldItem != null)
                 {
-                    if (itemHit.IsCollectableByInteraction)
+                    if (hitWorldItem.IsCollectableByInteraction)
                     {
-                        itemHit.CollectItem();
+                        hitWorldItem.CollectItem();
                     }
                 }
 
-                if (itemHit.TryGetComponent(out ItemRequirement itemReq))
+                if (hit.collider.TryGetComponent(out ItemRequirement itemReq))
                 {
                     itemReq.AttemptInteraction();
+                }
+
+                if (hit.collider.TryGetComponent(out FoodItem foodItem))
+                {
+                    foodItem.ConsumeItem();
                 }
             }
                 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
@@ -10,7 +11,8 @@ public class EnemyMovement : MonoBehaviour
     public bool seesPlayer;
     public Transform playerPos;
     public float speed;
-    public float rotationSpeed; 
+    public float rotationSpeed;
+    public NavMeshAgent agent;
 
 
     // Start is called before the first frame update
@@ -24,7 +26,9 @@ public class EnemyMovement : MonoBehaviour
     {
         if (seesPlayer == true)
         {
-            transform.parent.position = Vector3.MoveTowards(transform.parent.position, playerPos.position, Time.deltaTime * speed);
+            agent.destination = playerPos.position;
+            //transform.parent.position = Vector3.MoveTowards(transform.parent.position, playerPos.position, Time.deltaTime * speed);
+
             // The step size is equal to speed times frame time.
             // Rotate towards the player.
             // Calculate the direction from the current object to the target
