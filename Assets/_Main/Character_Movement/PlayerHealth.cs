@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
 	public Collider playerCollider;
 
     public GameObject deathScreen;
+
+    private Coroutine biteRoutine;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
 			
     }
 
-	void TakeDamage(int damage)
+	public void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
 
@@ -49,7 +52,25 @@ public class PlayerHealth : MonoBehaviour
         {
 			//currentHealth -= 10;
 			Debug.Log("Enemy Detected");
-			TakeDamage(10);
+            if (biteRoutine != null) return;
+            biteRoutine = StartCoroutine(enemyAttack(collision.gameObject.GetComponent<Collider>()));
+            
         }
+    }
+
+    IEnumerator enemyAttack(Collider enemyCollider)
+    {
+        SimpleFPSController controller = GetComponent<SimpleFPSController>();
+        controller.enabled = false;
+        enemyCollider.enabled = false;
+        enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 0;
+        yield return new WaitForSeconds(3);
+        TakeDamage(10);
+        controller.enabled = true;
+
+        yield return new WaitForSeconds(2f);
+        enemyCollider.enabled = true;
+        enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 1;
+        biteRoutine = null;
     }
 }

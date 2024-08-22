@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectInteraction : MonoBehaviour 
 {
-
     public InventoryUI inventoryUI;
     public Transform camera;
-    
+    #pragma warning disable 0108
+
     void Update() 
     {
         int layerMask = 1 << 5;
@@ -21,11 +22,23 @@ public class ObjectInteraction : MonoBehaviour
                 Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 Debug.Log("Interacted with: " + hit.collider.gameObject.name);
 
-                WorldItem itemHit = hit.collider.GetComponent<WorldItem>();
-                if (itemHit != null)
+                WorldItem hitWorldItem = hit.collider.GetComponent<WorldItem>();
+                if (hitWorldItem != null)
                 {
-                    inventoryUI.AddItem(itemHit.id);
-                    hit.collider.gameObject.SetActive(false);
+                    if (hitWorldItem.IsCollectableByInteraction)
+                    {
+                        hitWorldItem.CollectItem();
+                    }
+                }
+
+                if (hit.collider.TryGetComponent(out ItemRequirement itemReq))
+                {
+                    itemReq.AttemptInteraction();
+                }
+
+                if (hit.collider.TryGetComponent(out FoodItem foodItem))
+                {
+                    foodItem.ConsumeItem();
                 }
             }
                 

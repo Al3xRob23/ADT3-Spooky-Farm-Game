@@ -21,6 +21,11 @@ public class InventoryUI : MonoBehaviour
         newInventoryItem.SetItemID(item);
         currentItems.Add(newInventoryItem);
     }
+
+    public void RemoveItem()
+    {
+
+    }
 }
 
 public enum ItemID
