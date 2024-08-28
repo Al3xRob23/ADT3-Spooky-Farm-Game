@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176299622}
   - component: {fileID: 1176299623}
+  - component: {fileID: 1176299624}
   m_Layer: 5
   m_Name: FadeText
   m_TagString: Untagged
@@ -431,6 +432,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1176299624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176299621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25e216ae6304d64f84676b38e59ac82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532051346
 GameObject:
   m_ObjectHideFlags: 0
