@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemDefinitions:
   - ItemID: 0
-    ItemSprite: {fileID: -2052894039, guid: 8ddbce9fd7d890b4eb2a6223b0f429fb, type: 3}
+    ItemSprite: {fileID: 21300000, guid: d25399dfd95d8b4488321bb23b5f449a, type: 3}
     ItemName: Key
     ItemDescription: A Key
   - ItemID: 1

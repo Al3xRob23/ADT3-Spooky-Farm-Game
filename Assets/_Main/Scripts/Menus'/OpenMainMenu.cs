@@ -7,6 +7,8 @@ public class OpenMainMenu : MonoBehaviour
     public void OpenMainMenuOnEndGame()
     {
         SceneManager.LoadScene("MainMenu");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
 }

@@ -67,6 +67,8 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(3);
         TakeDamage(10);
         controller.enabled = true;
+        EnemyInteraction enemyInteraction = enemyCollider.GetComponent<EnemyInteraction>();
+        enemyInteraction.PlayerExit();
 
         yield return new WaitForSeconds(2f);
         enemyCollider.enabled = true;

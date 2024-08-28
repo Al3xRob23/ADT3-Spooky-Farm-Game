@@ -34,10 +34,15 @@ public class EnemyInteraction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         {
-            playerClose = false;
-            animator.SetBool("playerClose", false);
 
+            PlayerExit();
         }
+    }
+
+    public void PlayerExit()
+    {
+        playerClose = false;
+        animator.SetBool("playerClose", false);
     }
 
 }

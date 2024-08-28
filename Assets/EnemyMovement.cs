@@ -46,6 +46,7 @@ public class EnemyMovement : MonoBehaviour
             //float singleStep = rotationSpeed * Time.deltaTime;
             //transform.parent.forward = Vector3.RotateTowards(transform.parent.forward, playerPos.position, singleStep, 0.1f);
         }
+        animator.SetBool("seesPlayer", agent.velocity.magnitude > 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,7 +54,6 @@ public class EnemyMovement : MonoBehaviour
         if (other.tag == "Player")
         {
             seesPlayer = true;
-            animator.SetBool("seesPlayer", true);
             playerPos = other.transform;
         }
     }
@@ -63,7 +63,6 @@ public class EnemyMovement : MonoBehaviour
         if (other.tag == "Player")
         {
             seesPlayer = false;
-            animator.SetBool("seesPlayer", false);
         }
     }
 }

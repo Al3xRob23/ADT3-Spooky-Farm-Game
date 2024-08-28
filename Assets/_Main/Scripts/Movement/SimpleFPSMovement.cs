@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 
 public class SimpleFPSController : MonoBehaviour
 {
 
     public bool isGrounded;
+    private Vector3 velocity;
+    public float gravity = -9.81f;
 
     public float movementSpeed = 5.0f;
     public float sprintSpeed = 7.0f;
@@ -13,6 +16,7 @@ public class SimpleFPSController : MonoBehaviour
 
     float verticalRotation = 0;
     CharacterController characterController;
+    Camera camera;
 
     public float Stamina = 10.0f;
 public float MaxStamina = 10.0f;
@@ -25,6 +29,11 @@ private float StaminaRegenTimer = 0.0f;
 private const float StaminaDecreasePerFrame = 1.0f;
 private const float StaminaIncreasePerFrame = 5.0f;
 private const float StaminaTimeToRegen = 3.0f;
+    public float verticalLookLimit = 80f;
+
+    private float xRotation;
+    private float mouseY;
+
 
     //Animations
     public Animator animator;
@@ -33,34 +42,65 @@ private const float StaminaTimeToRegen = 3.0f;
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
+        camera = Camera.main;
 
     }
+
+    //private void FixedUpdate()
+    //{
+    //    transform.Rotate(Vector3.up * mouseX * mouseSensitivity * Time.deltaTime);
+    //    Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation * mouseSensitivity * Time.deltaTime, 0, 0);
+    //}
 
 
     void Update()
     {
-         currentSpeed = movementSpeed;
-        // Rotation (Mouse Look)
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        verticalRotation += mouseY;
-        verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
+        currentSpeed = movementSpeed;
+        isGrounded = characterController.isGrounded;
+        //// Rotation (Mouse Look)
+        //mouseX = Input.GetAxis("Mouse X");
+        //mouseY = -Input.GetAxis("Mouse Y");
+        //verticalRotation += mouseY;
+        //verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
+
+
+        //// Movement
+        //float forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;
+        //float sideSpeed = Input.GetAxis("Horizontal") * movementSpeed;
+
+        //Vector3 speed = new Vector3(sideSpeed, 0, forwardSpeed);
+        //speed = transform.rotation * speed;
+
+        //characterController.SimpleMove(speed);
+        // Player Movement
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Vector3 move = transform.right * horizontal + transform.forward * vertical;
+        characterController.Move(move * currentSpeed * Time.deltaTime);
+
+        // Gravity.
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f; // Small downward force to ensure grounded state
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
+
+        // Mouse Look
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -verticalLookLimit, verticalLookLimit);
+
+        camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
-        Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-
-        // Movement
-        float forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;
-        float sideSpeed = Input.GetAxis("Horizontal") * movementSpeed;
-
-        Vector3 speed = new Vector3(sideSpeed, 0, forwardSpeed);
-        speed = transform.rotation * speed;
-
-        characterController.SimpleMove(speed);
 
         //Sprinting
 
-            bool isRunning = Input.GetKey(KeyCode.LeftShift);
-            bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
 
         if (isRunning)
