@@ -7,7 +7,7 @@ public class OpenEndScene : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("IntroScene");
+        SceneManager.LoadScene("EndScene");
     }
 
 
