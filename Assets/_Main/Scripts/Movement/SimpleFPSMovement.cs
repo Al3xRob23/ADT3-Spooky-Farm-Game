@@ -142,37 +142,63 @@ public class SimpleFPSController : MonoBehaviour
 
         //Attacking enemies 
         //Replace with animation collision script
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
+        //{
             
-            RaycastHit hit;
-            int layerMask = LayerMask.GetMask("Enemy");
-            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
-            {
-                Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Interacted with: " + hit.collider.gameObject.name);
 
-                if (hit.collider.gameObject.CompareTag("Enemy"))
-                {
-                    Debug.Log("Zombie");
-                    // Ensure the enemy has an EnemyHealth component
-                    if (hit.collider.gameObject.TryGetComponent(out EnemyHealth enemyHealth)) 
-                    {
-                        enemyHealth.TakeDamage(); // Call the method to apply damage
+        //    if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
+        //    {
+        //        Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+        //        Debug.Log("Interacted with: " + hit.collider.gameObject.name);
 
-                        if (enemyHealth.currentHealth <= 0)
-                        {
-                            enemyHealth.RemoveEnemy();
-                        }
-                    }
+        //        if (hit.collider.gameObject.CompareTag("Enemy"))
+        //        {
+        //            Debug.Log("Zombie");
+        //            // Ensure the enemy has an EnemyHealth component
+        //            if (hit.collider.gameObject.TryGetComponent(out EnemyHealth enemyHealth)) 
+        //            {
+        //                enemyHealth.TakeDamage(); // Call the method to apply damage
 
-                }
+        //                if (enemyHealth.currentHealth <= 0)
+        //                {
+        //                    enemyHealth.RemoveEnemy();
+        //                }
+        //            }
+
+        //        }
 
                 void OnCollisionStay(Collision collision)
                 {
                     if (collision.gameObject.tag == "Ground")
                     {
                         isGrounded = true;
+                    }
+                }
+
+        //    }
+        //}
+    }
+
+    public void EnemyHit()
+    {
+        RaycastHit hit;
+        int layerMask = LayerMask.GetMask("Enemy");
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
+        {
+            Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log("Interacted with: " + hit.collider.gameObject.name);
+
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Zombie");
+                // Ensure the enemy has an EnemyHealth component
+                if (hit.collider.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
+                {
+                    enemyHealth.TakeDamage(); // Call the method to apply damage
+
+                    if (enemyHealth.currentHealth <= 0)
+                    {
+                        enemyHealth.RemoveEnemy();
                     }
                 }
 
