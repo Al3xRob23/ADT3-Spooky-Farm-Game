@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using JetBrains.Annotations;
 
 public class SimpleFPSController : MonoBehaviour
 {
@@ -19,16 +20,16 @@ public class SimpleFPSController : MonoBehaviour
     Camera camera;
 
     public float Stamina = 10.0f;
-public float MaxStamina = 10.0f;
-public float currentSpeed;
+    public float MaxStamina = 10.0f;
+    public float currentSpeed;
 
-//---------------------------------------------------------
-private float StaminaRegenTimer = 0.0f;
+    //---------------------------------------------------------
+    private float StaminaRegenTimer = 0.0f;
 
-//---------------------------------------------------------
-private const float StaminaDecreasePerFrame = 1.0f;
-private const float StaminaIncreasePerFrame = 5.0f;
-private const float StaminaTimeToRegen = 3.0f;
+    //---------------------------------------------------------
+    private const float StaminaDecreasePerFrame = 1.0f;
+    private const float StaminaIncreasePerFrame = 5.0f;
+    private const float StaminaTimeToRegen = 3.0f;
     public float verticalLookLimit = 80f;
 
     private float xRotation;
@@ -37,6 +38,8 @@ private const float StaminaTimeToRegen = 3.0f;
 
     //Animations
     public Animator animator;
+
+    RaycastHit hit;
 
     void Start()
     {
@@ -115,7 +118,7 @@ private const float StaminaTimeToRegen = 3.0f;
             else
                 StaminaRegenTimer += Time.deltaTime;
         }
-        if (isRunning )
+        if (isRunning)
         {
             movementSpeed = sprintSpeed;
         }
@@ -136,14 +139,44 @@ private const float StaminaTimeToRegen = 3.0f;
         {
             animator.SetBool("isStabbing", false);
         }
-    }
 
-    void OnCollisionStay(Collision collision)
-    {
-        if(collision.gameObject.tag == "Ground")
+        //Attacking enemies 
+        //Replace with animation collision script
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-			isGrounded = true;
+            
+            RaycastHit hit;
+            int layerMask = LayerMask.GetMask("Enemy");
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
+            {
+                Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.Log("Interacted with: " + hit.collider.gameObject.name);
+
+                if (hit.collider.gameObject.CompareTag("Enemy"))
+                {
+                    Debug.Log("Zombie");
+                    // Ensure the enemy has an EnemyHealth component
+                    if (hit.collider.gameObject.TryGetComponent(out EnemyHealth enemyHealth)) 
+                    {
+                        enemyHealth.TakeDamage(); // Call the method to apply damage
+
+                        if (enemyHealth.currentHealth <= 0)
+                        {
+                            enemyHealth.RemoveEnemy();
+                        }
+                    }
+
+                }
+
+                void OnCollisionStay(Collision collision)
+                {
+                    if (collision.gameObject.tag == "Ground")
+                    {
+                        isGrounded = true;
+                    }
+                }
+
+            }
         }
     }
-    
 }
