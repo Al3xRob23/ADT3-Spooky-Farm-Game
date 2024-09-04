@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class OpenPauseScreen : MonoBehaviour
 {
     [SerializeField] GameObject panel;
-    [SerializeField] CharacterController characterController;
+    //[SerializeField] CharacterController characterController;
     public bool PauseMenuOpen;
     void Update()
     {
