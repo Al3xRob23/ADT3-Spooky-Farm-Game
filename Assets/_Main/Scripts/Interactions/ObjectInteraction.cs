@@ -7,7 +7,7 @@ public class ObjectInteraction : MonoBehaviour
 {
     public InventoryUI inventoryUI;
     public Transform camera;
-    #pragma warning disable 0108
+#pragma warning disable 0108
 
     void Update() 
     {
