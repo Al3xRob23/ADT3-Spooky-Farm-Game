@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 2457404389581158191}
   - component: {fileID: 390756249856595376}
   - component: {fileID: 7822527790376071427}
-  - component: {fileID: 1694704277900104659}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -171,21 +170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
   camera: {fileID: 5586255141400964438}
---- !u!114 &1694704277900104659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087649546605418941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e59622c2a9a0a644b41e84ec9144903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  characterController: {fileID: 2328898461062614418}
-  PauseMenuOpen: 0
 --- !u!1 &7369847018998746122
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +448,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab74ded239afaa545979c56e455d6562, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1965710186628154235}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab74ded239afaa545979c56e455d6562, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5995916858703400119}
   m_SourcePrefab: {fileID: 100100000, guid: ab74ded239afaa545979c56e455d6562, type: 3}
 --- !u!4 &3539474485147853516 stripped
 Transform:
@@ -496,3 +483,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5995916858703400119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203386661972457590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af0df98c9cf6a64995f9e2737d427a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 2087649546605418941}

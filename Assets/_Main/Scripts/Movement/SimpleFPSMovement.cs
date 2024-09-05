@@ -102,7 +102,7 @@ public class SimpleFPSController : MonoBehaviour
 
         //Sprinting
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isRunning = (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W));
         bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
 
