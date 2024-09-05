@@ -22,9 +22,22 @@ public class InventoryUI : MonoBehaviour
         currentItems.Add(newInventoryItem);
     }
 
-    public void RemoveItem()
+    public void RemoveItem(ItemID itemID)
     {
-
+        InventoryItem itemToDelete = null;
+        foreach(var currentItem in currentItems)
+        {
+            if (currentItem.CurrentItemDefinition.ItemID == itemID)
+            {
+                // We found the item.
+                itemToDelete = currentItem;
+                Destroy(currentItem.gameObject);
+            }
+        }
+        if (itemToDelete != null)
+        {
+            currentItems.Remove(itemToDelete);
+        }
     }
 }
 

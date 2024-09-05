@@ -11,6 +11,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public class ItemHoverEvent : UnityEvent<InventoryItem> { }
     public static ItemHoverEvent OnItemPointerEnter = new ItemHoverEvent();
     public static ItemHoverEvent OnItemPointerExit = new ItemHoverEvent();
+    public static ItemHoverEvent OnItemClicked = new ItemHoverEvent();
 
     [SerializeField] private ItemLookup itemLookup;
 
@@ -39,5 +40,10 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             currentItemDefinition = definition;
             itemImage.sprite = definition.ItemSprite;
         }
+    }
+
+    public void HandleItemClicked()
+    {
+        OnItemClicked?.Invoke(this);
     }
 }

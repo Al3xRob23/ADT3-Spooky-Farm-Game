@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     }
     public void RemoveEnemy()
     {
+        //replace with enemy death animation
         Destroy(gameObject);
     }
 }
