@@ -9,6 +9,5 @@ public class OpenEndScene : MonoBehaviour
     {
         SceneManager.LoadScene("EndScene");
     }
-
-
 }
+

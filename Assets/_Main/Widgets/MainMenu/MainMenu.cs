@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public void OptionsMenu()
     {
         OptionsCanvas.enabled = true;
+        
     }
 
     public void CloseOptionsMenu()
