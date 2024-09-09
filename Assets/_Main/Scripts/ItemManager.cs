@@ -17,6 +17,7 @@ public class ItemManager : MonoBehaviour
         switch (inventoryItem.CurrentItemDefinition.ItemID)
         {
             case ItemID.MedicPack:
+                Debug.Log("Used Item");
                 playerHealth.TakeDamage(-20);
                 inventoryUI.RemoveItem(ItemID.MedicPack);
                 break;
