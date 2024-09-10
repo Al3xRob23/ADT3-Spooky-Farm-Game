@@ -6,7 +6,9 @@ using UnityEngine.Events;
 public class ObjectInteraction : MonoBehaviour 
 {
     public InventoryUI inventoryUI;
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     public Transform camera;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 #pragma warning disable 0108
 
     void Update() 
