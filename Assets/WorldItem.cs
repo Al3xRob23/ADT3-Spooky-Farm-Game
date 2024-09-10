@@ -28,3 +28,5 @@ public class WorldItem : MonoBehaviour
         OnItemCollected?.Invoke(id);
     }
 }
+
+
