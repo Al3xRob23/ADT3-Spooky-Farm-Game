@@ -17,7 +17,9 @@ public class SimpleFPSController : MonoBehaviour
 
     float verticalRotation = 0;
     CharacterController characterController;
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     Camera camera;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
     public float Stamina = 10.0f;
     public float MaxStamina = 10.0f;
@@ -167,6 +169,7 @@ public class SimpleFPSController : MonoBehaviour
 
         //        }
 
+#pragma warning disable CS8321 // Local function is declared but never used
                 void OnCollisionStay(Collision collision)
                 {
                     if (collision.gameObject.tag == "Ground")
@@ -174,6 +177,7 @@ public class SimpleFPSController : MonoBehaviour
                         isGrounded = true;
                     }
                 }
+#pragma warning restore CS8321 // Local function is declared but never used
 
         //    }
         //}
