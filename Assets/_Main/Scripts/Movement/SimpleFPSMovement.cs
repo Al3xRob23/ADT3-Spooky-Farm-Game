@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using JetBrains.Annotations;
+using static UnityEngine.UI.Image;
+using UnityEditor.PackageManager;
 
 public class SimpleFPSController : MonoBehaviour
 {
+    private HighlightInteractable lastViewedInteractable;
 
     public bool isGrounded;
     private Vector3 velocity;
@@ -50,6 +53,9 @@ public class SimpleFPSController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         camera = Camera.main;
+
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
     }
 
@@ -104,9 +110,33 @@ public class SimpleFPSController : MonoBehaviour
         camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
 
-        //Sprinting
+        //Looking Raycast
+        RaycastHit hit;
+        int layerMask = LayerMask.GetMask("Interactable");
+        Transform cameraTransform = Camera.main.transform;
+        Ray ray = new Ray(transform.position, transform.forward);
 
-        bool isRunning = (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W));
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
+        {
+            Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            if (hit.collider.gameObject.TryGetComponent(out HighlightInteractable highlightInteractable))
+            {
+                //Debug.Log("Interacted with: " + hit.collider.gameObject.name);
+                highlightInteractable.GetComponent<HighlightInteractable>().Highlight();
+                lastViewedInteractable = highlightInteractable;
+            }
+
+        }else if(lastViewedInteractable != null)
+        {
+            lastViewedInteractable.UnHighlight();
+
+        }
+
+
+
+            //Sprinting
+
+            bool isRunning = (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W));
         bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
 
