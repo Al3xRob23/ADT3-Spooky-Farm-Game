@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class InventoryController : MonoBehaviour
 
         //gameObject.GetComponent<characterController>();
         //characterController = gameObject.GetComponent<CharacterController>();
+        Debug.Log("Inventory Controller start");
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         Cursor.visible = true;
         
@@ -30,7 +32,8 @@ public class InventoryController : MonoBehaviour
                 // We know that the game is paused.
                 Time.timeScale = 0.0f;
                 inventoryOpen = true;
-                Cursor.lockState = CursorLockMode.Confined; 
+                Cursor.lockState = CursorLockMode.Confined;
+                Debug.Log("Cursor set visible");
                 Cursor.visible = true;
             }
             else

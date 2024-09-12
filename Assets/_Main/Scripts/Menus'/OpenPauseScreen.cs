@@ -30,9 +30,11 @@ public class OpenPauseScreen : MonoBehaviour
                 Cursor.visible = false;
             }
         }
+
     }
     public void ResumeGame()
     {
+        panel.SetActive(false);
         Time.timeScale = 1.0f;
         PauseMenuOpen = false;
         Cursor.lockState = CursorLockMode.Locked;

@@ -6,6 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public InventoryUI inventoryUI;
+    public EquipItemOnPlayer equipItemOnPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class ItemManager : MonoBehaviour
                 break;
             case ItemID.Pitchfork:
                 Debug.Log("Equipped Pitchfork");
+                equipItemOnPlayer.EquipItem();
                 break;
         }
     }

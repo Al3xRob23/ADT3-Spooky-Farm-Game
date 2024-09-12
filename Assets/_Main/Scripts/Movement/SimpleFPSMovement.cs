@@ -54,7 +54,9 @@ public class SimpleFPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         camera = Camera.main;
 
+#pragma warning disable CS0168 // Variable is declared but never used
         RaycastHit hit;
+#pragma warning restore CS0168 // Variable is declared but never used
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
     }
@@ -107,8 +109,11 @@ public class SimpleFPSController : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -verticalLookLimit, verticalLookLimit);
 
-        camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        if (Time.timeScale != 0)
+        {
+            camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            transform.Rotate(Vector3.up * mouseX);
+        }
 
         //Looking Raycast
         RaycastHit hit;
