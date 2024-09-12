@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Ground
   - Food
+  - NPC
   layers:
   - Default
   - TransparentFX
