@@ -8,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] private InventoryItem inventoryItemPrefab;
     [SerializeField] private Transform inventoryGridContainer;
+    public KeyItemsUI keyItemsUI;
 
     public void Start()
     {
@@ -20,6 +21,7 @@ public class InventoryUI : MonoBehaviour
         newInventoryItem.transform.SetParent(inventoryGridContainer);
         newInventoryItem.SetItemID(item);
         currentItems.Add(newInventoryItem);
+        keyItemsUI.HandleItemAdded(item);
     }
 
     public void RemoveItem(ItemID itemID)
