@@ -18,7 +18,6 @@ public class NPC_Dialogue : MonoBehaviour
     {
         canvas.SetActive(true);
         Anim.Play("Idle");
-        Debug.Log("Collided");
         NeighborNPC.GetComponents<Animator>();
         
     }
@@ -29,3 +28,5 @@ public class NPC_Dialogue : MonoBehaviour
         Anim.Play("Dancing");
     }
 }
+
+

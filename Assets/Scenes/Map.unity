@@ -1389,6 +1389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryItemPrefab: {fileID: 5748360624297815154, guid: 9ccc2b774cce3654587949847205ef97, type: 3}
   inventoryGridContainer: {fileID: 143999721}
+  keyItemsUI: {fileID: 0}
 --- !u!1 &341080578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,6 +5270,10 @@ PrefabInstance:
     - target: {fileID: 4690479200762572868, guid: ea799b75ec480394b8da4d35384a0925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354106431983489122, guid: ea799b75ec480394b8da4d35384a0925, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5354106431983489122, guid: ea799b75ec480394b8da4d35384a0925, type: 3}
       propertyPath: m_TagString
