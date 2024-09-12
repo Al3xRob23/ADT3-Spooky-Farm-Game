@@ -14,6 +14,10 @@ public class PlayerHealth : MonoBehaviour
     public GameObject deathScreen;
 
     private Coroutine biteRoutine;
+    public float timeRemaining = 3;
+    public int qButtonPressed;
+    public bool isGrabbed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +33,23 @@ public class PlayerHealth : MonoBehaviour
 		{
 			TakeDamage(20);
 		}
-			
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            if (isGrabbed == true)
+            {
+            qButtonPressed += 1;
+            }else
+        {
+            Debug.Log("Not Grabbed");
+        }
+        }
+        if (isGrabbed == true)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+
     }
+
 
 	public void TakeDamage(int damage)
 	{
@@ -46,7 +65,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-	void OnTriggerEnter(Collider collision)
+
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Enemy")
         {
@@ -58,13 +78,33 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+
+
     IEnumerator enemyAttack(Collider enemyCollider)
     {
+        isGrabbed = true;
         SimpleFPSController controller = GetComponent<SimpleFPSController>();
         controller.enabled = false;
         enemyCollider.enabled = false;
         enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 0;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
+        if (timeRemaining <= 0 && qButtonPressed != 5)
+        {
+            Debug.Log("Dead");
+            isGrabbed = false;
+            qButtonPressed = 0;
+            timeRemaining = 5;
+            //insert take damage code here
+        }
+        else if (timeRemaining > 0 && qButtonPressed >= 5)
+        {
+            Debug.Log("Safe");
+            isGrabbed = false;
+            qButtonPressed = 0;
+            timeRemaining = 5;
+            //insert player is safe code here
+        }
+
         TakeDamage(10);
         controller.enabled = true;
         EnemyInteraction enemyInteraction = enemyCollider.GetComponent<EnemyInteraction>();
@@ -75,4 +115,6 @@ public class PlayerHealth : MonoBehaviour
         enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 1;
         biteRoutine = null;
     }
+
+
 }
