@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2328898461062614418}
   - component: {fileID: 8842787710617608946}
   - component: {fileID: 3163866046088565413}
-  - component: {fileID: 2457404389581158191}
   - component: {fileID: 390756249856595376}
   - component: {fileID: 7822527790376071427}
   m_Layer: 0
@@ -120,19 +119,6 @@ MonoBehaviour:
   panel: {fileID: 0}
   characterController: {fileID: 2328898461062614418}
   inventoryOpen: 0
---- !u!114 &2457404389581158191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087649546605418941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a3ad68590fcfa44a70280c8d0e079c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerhud: {fileID: 0}
 --- !u!136 &390756249856595376
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -186,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8340965397385585887
 Transform:
   m_ObjectHideFlags: 0
@@ -644,7 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 62521c33c0853dd4897ed6c24064e24e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
