@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using JetBrains.Annotations;
 using static UnityEngine.UI.Image;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 
 public class SimpleFPSController : MonoBehaviour
 {

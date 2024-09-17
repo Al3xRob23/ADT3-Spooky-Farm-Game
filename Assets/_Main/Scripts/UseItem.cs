@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using System.Collections;
 using UnityEngine.Events;
-using UnityEditor.UI;
 
 public class UseItem : MonoBehaviour
 {

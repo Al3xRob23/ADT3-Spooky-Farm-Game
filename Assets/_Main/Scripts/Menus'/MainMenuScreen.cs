@@ -15,6 +15,7 @@ public class MainMenuScreen : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
         Debug.Log("Quitting");
     }
 }
