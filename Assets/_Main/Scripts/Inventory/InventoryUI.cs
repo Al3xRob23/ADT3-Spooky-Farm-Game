@@ -53,5 +53,6 @@ public enum ItemID
     ZombieHead,
     Burger,
     CursedEgg,
-    CollectableFigures
+    CollectableFigures,
+    Torch,
 }
