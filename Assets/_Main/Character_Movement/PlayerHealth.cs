@@ -88,22 +88,22 @@ public class PlayerHealth : MonoBehaviour
         enemyCollider.enabled = false;
         enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 0;
         yield return new WaitForSeconds(5);
-        if (timeRemaining <= 0 && qButtonPressed != 5)
-        {
-            Debug.Log("Dead");
-            isGrabbed = false;
-            qButtonPressed = 0;
-            timeRemaining = 5;
-            //insert take damage code here
-        }
-        else if (timeRemaining > 0 && qButtonPressed >= 5)
-        {
-            Debug.Log("Safe");
-            isGrabbed = false;
-            qButtonPressed = 0;
-            timeRemaining = 5;
-            //insert player is safe code here
-        }
+        //if (timeRemaining <= 0 && qButtonPressed != 5)
+        //{
+        //    Debug.Log("Dead");
+        //    isGrabbed = false;
+        //    qButtonPressed = 0;
+        //    timeRemaining = 5;
+        //    //insert take damage code here
+        //}
+        //else if (timeRemaining > 0 && qButtonPressed >= 5)
+        //{
+        //    Debug.Log("Safe");
+        //    isGrabbed = false;
+        //    qButtonPressed = 0;
+        //    timeRemaining = 5;
+        //    //insert player is safe code here
+        //}
 
         TakeDamage(10);
         controller.enabled = true;

@@ -121,12 +121,15 @@ public class SimpleFPSController : MonoBehaviour
         Transform cameraTransform = Camera.main.transform;
         Ray ray = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
+        Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.yellow);
+        Debug.Log("Draw ray");
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 2, layerMask))
         {
-            Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log("Hit ray");
+
             if (hit.collider.gameObject.TryGetComponent(out HighlightInteractable highlightInteractable))
             {
-                //Debug.Log("Interacted with: " + hit.collider.gameObject.name);
+                Debug.Log("Interacted with: " + hit.collider.gameObject.name);
                 highlightInteractable.GetComponent<HighlightInteractable>().Highlight();
                 lastViewedInteractable = highlightInteractable;
             }
