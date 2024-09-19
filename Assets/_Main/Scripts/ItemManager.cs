@@ -26,6 +26,11 @@ public class ItemManager : MonoBehaviour
                 Debug.Log("Equipped Pitchfork");
                 equipItemOnPlayer.EquipItem();
                 break;
+            case ItemID.Burger:
+                Debug.Log("Used Item");
+                playerHealth.TakeDamage(-10);
+                inventoryUI.RemoveItem(ItemID.MedicPack);
+                break;
         }
     }
 

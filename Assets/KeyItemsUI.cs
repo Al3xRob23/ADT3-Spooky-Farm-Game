@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,6 +54,7 @@ public class KeyItemsUI : MonoBehaviour
     public void UnlockZombieHead()
     {
         LockedZombieHead.enabled = false;
+        FindObjectOfType<CompassBarUI>().one.enabled = false;
     }
     public void UnlockFigures()
     {

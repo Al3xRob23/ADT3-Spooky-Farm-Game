@@ -17,6 +17,7 @@ public class CompassBarUI : MonoBehaviour
     public QuestMarkers one;
     public QuestMarkers two;
     public QuestMarkers three;
+    public QuestMarkers four;
 
     public float maxDistance = 200f;
     private void Start()
@@ -26,6 +27,7 @@ public class CompassBarUI : MonoBehaviour
         AddQuestMarker(one);
         AddQuestMarker(two);
         AddQuestMarker(three);
+        AddQuestMarker(four);
     }
 
     private void Update() 
@@ -34,17 +36,20 @@ public class CompassBarUI : MonoBehaviour
 
         foreach(QuestMarkers markers in questMarkers)
         {
-            markers.image.rectTransform.anchoredPosition = GetPosOnCompass(markers);
-
-            float dst = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), markers.position);
-            float scale = 0f;
-
-            if (dst < maxDistance)
+            if (markers.image != null)
             {
-                scale = 1f - (dst / maxDistance);
+                markers.image.rectTransform.anchoredPosition = GetPosOnCompass(markers);
             }
 
-            markers.image.rectTransform.localScale = Vector3.one * scale;
+            //float dst = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), markers.position);
+            //float scale = 0f;
+
+            //if (dst < maxDistance)
+            //{
+            //    scale = 1f - (dst / maxDistance);
+            //}
+
+            //markers.image.rectTransform.localScale = Vector3.one * scale;
         }
     }
 

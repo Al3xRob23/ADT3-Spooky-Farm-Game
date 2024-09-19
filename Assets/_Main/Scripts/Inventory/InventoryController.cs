@@ -16,7 +16,7 @@ public class InventoryController : MonoBehaviour
 
         //gameObject.GetComponent<characterController>();
         //characterController = gameObject.GetComponent<CharacterController>();
-        Debug.Log("Inventory Controller start");
+        //Debug.Log("Inventory Controller start");
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         Cursor.visible = true;
         

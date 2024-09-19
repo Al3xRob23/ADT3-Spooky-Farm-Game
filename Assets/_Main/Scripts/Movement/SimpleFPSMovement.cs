@@ -102,15 +102,17 @@ public class SimpleFPSController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
 
-        // Mouse Look
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -verticalLookLimit, verticalLookLimit);
 
         if (Time.timeScale != 0)
         {
+
+            // Mouse Look
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -verticalLookLimit, verticalLookLimit);
             camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
         }
