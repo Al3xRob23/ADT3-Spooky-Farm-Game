@@ -57,7 +57,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.41428572
+      - time: 0.32605043
         functionName: AE_Hit
         data: Hit
         objectReferenceParameter: {fileID: 919132149155446097, guid: ab74ded239afaa545979c56e455d6562, type: 3}
