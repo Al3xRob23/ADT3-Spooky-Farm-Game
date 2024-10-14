@@ -55,4 +55,8 @@ public enum ItemID
     CursedEgg,
     CollectableFigures,
     Torch,
+    ShotgunPump,
+    ShotgunFrame,
+    ShotgunPart,
+    ShotgunBarrel,
 }

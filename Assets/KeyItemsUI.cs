@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class KeyItemsUI : MonoBehaviour
 {
-    public Image LockedKeys;
-    public Image LockedEgg;
-    public Image LockedZombieHead;
-    public Image LockedFigures;
+    public Image LockedShotgunFrame;
+    public Image LockedShotgunPump;
+    public Image LockedShotgunPart;
+    public Image LockedShotgunBarrel;
 
 
     void Start()
@@ -27,16 +27,16 @@ public class KeyItemsUI : MonoBehaviour
     {
         switch (id)
         {
-            case ItemID.CursedEgg:
+            case ItemID.ShotgunPump:
                 UnlockEgg();
                 break;
-            case ItemID.Key:
+            case ItemID.ShotgunFrame:
                 UnlockKeys();
                 break;
-            case ItemID.ZombieHead:
+            case ItemID.ShotgunPart:
                 UnlockZombieHead();
                 break;
-            case ItemID.CollectableFigures:
+            case ItemID.ShotgunBarrel:
                 UnlockFigures();
                 break;
 
@@ -45,19 +45,19 @@ public class KeyItemsUI : MonoBehaviour
 
     public void UnlockEgg()
     {
-        LockedEgg.enabled = false;
+        LockedShotgunPump.enabled = false;
     }
     public void UnlockKeys()
     {
-        LockedKeys.enabled = false;
+        LockedShotgunFrame.enabled = false;
     }
     public void UnlockZombieHead()
     {
-        LockedZombieHead.enabled = false;
+        LockedShotgunPart.enabled = false;
         FindObjectOfType<CompassBarUI>().one.enabled = false;
     }
     public void UnlockFigures()
     {
-        LockedFigures.enabled = false;
+        LockedShotgunBarrel.enabled = false;
     }
 }

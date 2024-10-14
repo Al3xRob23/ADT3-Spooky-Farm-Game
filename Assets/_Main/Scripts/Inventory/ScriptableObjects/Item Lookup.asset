@@ -53,7 +53,19 @@ MonoBehaviour:
     ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
     ItemName: Torch
     ItemDescription: Hmm. This could be helpful.
-  - ItemID: 9
-    ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
-    ItemName: Torch
-    ItemDescription: Hmm. This could be helpful.
+  - ItemID: 10
+    ItemSprite: {fileID: 21300000, guid: 4b68225652be1d34086c09596b84e26f, type: 3}
+    ItemName: Shotgun Pump
+    ItemDescription: A shotgun part... I should collect all of these
+  - ItemID: 11
+    ItemSprite: {fileID: 21300000, guid: 81ab20dff7efb00488902132a8eea8d3, type: 3}
+    ItemName: Shotgun Frame
+    ItemDescription: A shotgun part... I should collect all of these
+  - ItemID: 12
+    ItemSprite: {fileID: 21300000, guid: e0fa0672cbbf6ff41bbf3c8385cc7d8e, type: 3}
+    ItemName: Shotgun Part
+    ItemDescription: A shotgun part... I should collect all of these
+  - ItemID: 13
+    ItemSprite: {fileID: 21300000, guid: befbc7effeb260845a47193b9627a234, type: 3}
+    ItemName: Shotgun Barrel
+    ItemDescription: A shotgun part... I should collect all of these
