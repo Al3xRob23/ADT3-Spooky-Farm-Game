@@ -30,7 +30,7 @@ MonoBehaviour:
     ItemName: Ammo
     ItemDescription: Present
   - ItemID: 3
-    ItemSprite: {fileID: 21300000, guid: f12e26f13a4fd0f46b7fd51ab16c666c, type: 3}
+    ItemSprite: {fileID: 21300000, guid: e6e37178bd4291946beb9e5fb0e44af1, type: 3}
     ItemName: Shotgun
     ItemDescription: Present
   - ItemID: 5
@@ -49,6 +49,10 @@ MonoBehaviour:
     ItemSprite: {fileID: 21300000, guid: 520e04a9317e3b147a45030017d6e968, type: 3}
     ItemName: Collecable Zombie Figure
     ItemDescription: How'd this get here?
+  - ItemID: 9
+    ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
+    ItemName: Torch
+    ItemDescription: Hmm. This could be helpful.
   - ItemID: 9
     ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
     ItemName: Torch
