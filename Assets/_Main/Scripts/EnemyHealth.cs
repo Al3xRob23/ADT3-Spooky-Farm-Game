@@ -23,9 +23,20 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= 10;
     }
+
+    IEnumerator AnimationWait()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
     public void RemoveEnemy()
     {
         //replace with enemy death animation
-        Destroy(gameObject);
+        
+        GetComponentInChildren<Animator>().SetBool("zombieDead", true);
+        GetComponentInChildren<Animator>().SetBool("seesPlayer", false);
+        GetComponentInChildren<Animator>().SetBool("playerClose", false);
+        StartCoroutine(AnimationWait());
+        
     }
 }
