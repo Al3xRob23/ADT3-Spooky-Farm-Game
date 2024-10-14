@@ -19,9 +19,8 @@ public class AnimationHitEvent : MonoBehaviour
 
     public void SetObjRotation()
     {
-        
         Animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        
+
     }
 }
 
