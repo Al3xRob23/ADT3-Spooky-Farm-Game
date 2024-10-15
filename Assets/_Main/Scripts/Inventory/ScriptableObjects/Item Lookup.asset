@@ -19,8 +19,8 @@ MonoBehaviour:
     ItemDescription: A Key
   - ItemID: 1
     ItemSprite: {fileID: 21300000, guid: 4f6bf8c38f95c1b48954a905303db063, type: 3}
-    ItemName: Potion
-    ItemDescription: A Potion
+    ItemName: Medic Pack
+    ItemDescription: This can be consumed to restore Health
   - ItemID: 4
     ItemSprite: {fileID: 21300000, guid: 49d3993c9a0c8d3489e8574799a6e425, type: 3}
     ItemName: Pitchfork
@@ -28,7 +28,7 @@ MonoBehaviour:
   - ItemID: 2
     ItemSprite: {fileID: 21300000, guid: cf646ed7c1ef48c40afdacc14ffe1860, type: 3}
     ItemName: Ammo
-    ItemDescription: Present
+    ItemDescription: Used to restore ammo for a shotgun
   - ItemID: 3
     ItemSprite: {fileID: 21300000, guid: e6e37178bd4291946beb9e5fb0e44af1, type: 3}
     ItemName: Shotgun
@@ -36,7 +36,7 @@ MonoBehaviour:
   - ItemID: 5
     ItemSprite: {fileID: 21300000, guid: 65feedbf35d94a74a9a1a3beb5557f07, type: 3}
     ItemName: Zombie Head
-    ItemDescription: Present
+    ItemDescription: Delightful...
   - ItemID: 6
     ItemSprite: {fileID: 21300000, guid: 4ac0eebe324b19843a9977ab375ab68a, type: 3}
     ItemName: Cheeseburger
@@ -53,7 +53,19 @@ MonoBehaviour:
     ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
     ItemName: Torch
     ItemDescription: Hmm. This could be helpful.
-  - ItemID: 9
-    ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
-    ItemName: Torch
-    ItemDescription: Hmm. This could be helpful.
+  - ItemID: 10
+    ItemSprite: {fileID: 21300000, guid: 4b68225652be1d34086c09596b84e26f, type: 3}
+    ItemName: Shotgun Pump
+    ItemDescription: A shotgun part... I should collect all of these
+  - ItemID: 11
+    ItemSprite: {fileID: 21300000, guid: 81ab20dff7efb00488902132a8eea8d3, type: 3}
+    ItemName: Shotgun Frame
+    ItemDescription: A shotgun part... I should collect all of these
+  - ItemID: 12
+    ItemSprite: {fileID: 21300000, guid: e0fa0672cbbf6ff41bbf3c8385cc7d8e, type: 3}
+    ItemName: Shotgun Part
+    ItemDescription: A shotgun part... I should collect all of these
+  - ItemID: 13
+    ItemSprite: {fileID: 21300000, guid: befbc7effeb260845a47193b9627a234, type: 3}
+    ItemName: Shotgun Barrel
+    ItemDescription: A shotgun part... I should collect all of these
