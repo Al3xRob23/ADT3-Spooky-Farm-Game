@@ -20,7 +20,7 @@ public class AnimationHitEvent : MonoBehaviour
     public void SetObjRotation()
     {
         Animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
-
+        Animator.transform.localPosition = new Vector3(0.12f, -0.5f, 0.08f);
     }
 }
 
