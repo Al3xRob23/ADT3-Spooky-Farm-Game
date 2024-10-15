@@ -12,17 +12,24 @@ public class EquipItemOnPlayer : MonoBehaviour
 
      public void EquipItem()
     {
-        gameObject.SetActive(true);
-        PlayerArms.SetActive(false);
+        if (IsEquipped == false)
+        {
+            gameObject.SetActive(true);
+            PlayerArms.SetActive(false);
+            IsEquipped = true;
+        }
+        
+
+        else
+        {
+            gameObject.SetActive(false);
+            PlayerArms.SetActive(true);
+            IsEquipped = false;
+        }
 
     }
 
 
-    public void DequipItem()
-    {
-        gameObject.SetActive(false);
-        PlayerArms.SetActive(true);
-    }
 
     
     //private void Update()
