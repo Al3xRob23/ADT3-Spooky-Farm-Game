@@ -7,6 +7,7 @@ public class ItemManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public InventoryUI inventoryUI;
     public EquipItemOnPlayer equipItemOnPlayer;
+    public EquipTorch equipTorch;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,10 @@ public class ItemManager : MonoBehaviour
                 Debug.Log("Used Item");
                 playerHealth.TakeDamage(-10);
                 inventoryUI.RemoveItem(ItemID.MedicPack);
+                break;
+            case ItemID.Torch:
+                Debug.Log("Used Torch");
+                equipTorch.EquipTorchItem();
                 break;
         }
     }
