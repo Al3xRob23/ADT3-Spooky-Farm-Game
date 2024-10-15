@@ -14,8 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public GameObject deathScreen;
 
     private Coroutine biteRoutine;
-    public float timeRemaining = 3;
-    public int qButtonPressed;
     public bool isGrabbed;
 
 
@@ -33,20 +31,7 @@ public class PlayerHealth : MonoBehaviour
 		{
 			TakeDamage(20);
 		}
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            if (isGrabbed == true)
-            {
-            qButtonPressed += 1;
-            }else
-        {
-            Debug.Log("Not Grabbed");
-        }
-        }
-        if (isGrabbed == true)
-        {
-            timeRemaining -= Time.deltaTime;
-        }
+        
 
     }
 

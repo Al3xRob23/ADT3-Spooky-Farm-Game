@@ -7,10 +7,12 @@ public class EnemyHealth : MonoBehaviour
     public int health = 20;
     public int currentHealth;
 
+    public AudioClip audioFX;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
+        GetComponent<AudioSource>().clip = audioFX;
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth -= 10;
+        GetComponentInChildren<AudioSource>().Play();
     }
 
     IEnumerator AnimationWait()

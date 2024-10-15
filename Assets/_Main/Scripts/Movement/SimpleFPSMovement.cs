@@ -124,7 +124,7 @@ public class SimpleFPSController : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
 
         Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.yellow);
-        Debug.Log("Draw ray");
+        //Debug.Log("Draw ray");
         if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 2, layerMask))
         {
             Debug.Log("Hit ray");
