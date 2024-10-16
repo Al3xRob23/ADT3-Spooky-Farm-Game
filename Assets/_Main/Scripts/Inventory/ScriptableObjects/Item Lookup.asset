@@ -51,7 +51,7 @@ MonoBehaviour:
     ItemDescription: How'd this get here?
   - ItemID: 9
     ItemSprite: {fileID: 21300000, guid: 71ff1527b8b95cf4dbc6795af7685959, type: 3}
-    ItemName: Torch
+    ItemName: Head Torch
     ItemDescription: Hmm. This could be helpful.
   - ItemID: 10
     ItemSprite: {fileID: 21300000, guid: 4b68225652be1d34086c09596b84e26f, type: 3}
