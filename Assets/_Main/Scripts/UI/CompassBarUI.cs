@@ -18,6 +18,8 @@ public class CompassBarUI : MonoBehaviour
     public QuestMarkers two;
     public QuestMarkers three;
     public QuestMarkers four;
+    public QuestMarkers nPCMarker;
+    public QuestMarkers shotgunMarker;
 
     public float maxDistance = 200f;
     private void Start()
@@ -28,6 +30,8 @@ public class CompassBarUI : MonoBehaviour
         AddQuestMarker(two);
         AddQuestMarker(three);
         AddQuestMarker(four);
+        AddQuestMarker(nPCMarker);
+        AddQuestMarker(shotgunMarker);
     }
 
     private void Update() 
