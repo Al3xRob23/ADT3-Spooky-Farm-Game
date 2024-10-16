@@ -3,7 +3,12 @@ guid: ba01cfd1d604075469afcf36b4382822
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slug
+    second: {fileID: 2100000, guid: 8fda17d5caf05604db105b19880ba28f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
