@@ -25,6 +25,7 @@ public class SimpleFPSController : MonoBehaviour
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     Camera camera;
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+    PlayerHealth playerHealth;
 
     public float Stamina = 10.0f;
     public float MaxStamina = 10.0f;
@@ -51,6 +52,7 @@ public class SimpleFPSController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerHealth = GetComponent<PlayerHealth>();
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         camera = Camera.main;
 
@@ -245,9 +247,9 @@ public class SimpleFPSController : MonoBehaviour
                     if (enemyHealth.currentHealth <= 0)
                     {
                         enemyHealth.RemoveEnemy();
+                        playerHealth.HandleAttackerDied();
                     }
                 }
-
             }
         }
     }

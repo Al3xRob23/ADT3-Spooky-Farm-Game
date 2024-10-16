@@ -7,12 +7,15 @@ public class EnemyHealth : MonoBehaviour
     public int health = 20;
     public int currentHealth;
 
-    public AudioClip audioFX;
+    public CapsuleCollider zombieCollider;
+    public AudioSource hitSFX;
+    public EnemyMovement enemyMovement;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
-        GetComponent<AudioSource>().clip = audioFX;
+        zombieCollider = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth -= 10;
-        GetComponentInChildren<AudioSource>().Play();
+        hitSFX.Play();
     }
 
     IEnumerator AnimationWait()
@@ -35,7 +38,8 @@ public class EnemyHealth : MonoBehaviour
     public void RemoveEnemy()
     {
         //replace with enemy death animation
-        
+        enemyMovement.seesPlayer = false;
+        zombieCollider.enabled = false;
         GetComponentInChildren<Animator>().SetBool("zombieDead", true);
         GetComponentInChildren<Animator>().SetBool("seesPlayer", false);
         GetComponentInChildren<Animator>().SetBool("playerClose", false);

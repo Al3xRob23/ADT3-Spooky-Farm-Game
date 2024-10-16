@@ -358,7 +358,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   currentHealth: 0
-  audioFX: {fileID: 8300000, guid: 7c5e3da33ca34444492d28ece9beb111, type: 3}
+  zombieCollider: {fileID: 8973258269640318917}
+  hitSFX: {fileID: 3172721605636775228}
+  enemyMovement: {fileID: 6676516913614223306}
 --- !u!1001 &2136209136279373926
 PrefabInstance:
   m_ObjectHideFlags: 0

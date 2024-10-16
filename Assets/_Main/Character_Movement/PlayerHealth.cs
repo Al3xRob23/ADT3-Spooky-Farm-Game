@@ -6,10 +6,11 @@ using UnityEngine.AI;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-	public int currentHealth;
+    public int currentHealth;
 
-	public HealthBar healthBar;
-	public Collider playerCollider;
+    public HealthBar healthBar;
+    public Collider playerCollider;
+    private SimpleFPSController fpsController;
 
     public GameObject deathScreen;
 
@@ -20,27 +21,26 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		currentHealth = maxHealth;
-		healthBar.SetMaxHealth(maxHealth);
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        fpsController = GetComponent<SimpleFPSController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(KeyCode.K))
-		{
-			TakeDamage(20);
-		}
-        
-
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(20);
+        }
     }
 
 
-	public void TakeDamage(int damage)
-	{
-		currentHealth -= damage;
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
 
-		healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -48,6 +48,14 @@ public class PlayerHealth : MonoBehaviour
             Time.timeScale = 0f;
             deathScreen.GetComponent<DeathScreen>().ShowMenu();
         }
+    }
+
+    public void HandleAttackerDied()
+    {
+        if (biteRoutine == null) return;
+        StopCoroutine(biteRoutine);
+        // Let the player do stuff again.
+        fpsController.enabled = true;
     }
 
 
@@ -68,15 +76,14 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator enemyAttack(Collider enemyCollider)
     {
         isGrabbed = true;
-        SimpleFPSController controller = GetComponent<SimpleFPSController>();
-        controller.enabled = false;
+        fpsController.enabled = false;
         enemyCollider.enabled = false;
         enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 0;
         yield return new WaitForSeconds(3);
 
 
         TakeDamage(10);
-        controller.enabled = true;
+        fpsController.enabled = true;
         EnemyInteraction enemyInteraction = enemyCollider.GetComponent<EnemyInteraction>();
         enemyInteraction.PlayerExit();
 

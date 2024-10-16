@@ -9,11 +9,11 @@ public class MixerController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private AudioMixer myAudioMixer;
 
-    public void SetVolume(float sliderValue)
+    public void SetMasterVolume(float sliderValue)
     {
         myAudioMixer.SetFloat("Master Volume", Mathf.Log10(sliderValue) * 20);
     }
-    public void SetZombieVolume(float sliderValue)
+    public void SetMusicVolume(float sliderValue)
     {
         myAudioMixer.SetFloat("Music", Mathf.Log10(sliderValue) * 20);
     }

@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class VolumeManager : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider sfxSlider;
+    [SerializeField] Slider masterSlider;
 
     // Start is called before the first frame update
     void Start()
     {
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
-            PlayerPrefs.SetFloat("musicVolume", 1);
+            Initialize();
             Load();
         }
 
@@ -21,23 +23,31 @@ public class VolumeManager : MonoBehaviour
             Load();
         }
     }
-    void Awake()
+
+    void Initialize()
     {
-        DontDestroyOnLoad(gameObject);
+        PlayerPrefs.SetFloat("musicVolume", 1);
+        PlayerPrefs.SetFloat("sfxVolume", 1);
+        PlayerPrefs.SetFloat("masterVolume", 1);
     }
 
-    public void ChangeVolume()
-    {
-        AudioListener.volume = volumeSlider.value;
-        Save();
-    }
     public void Load()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+        masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
     }
+
     public void Save()
     {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+        PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
+        PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
+        PlayerPrefs.SetFloat("masterVolume", masterSlider.value);
+    }
+
+    public void OnDestroy()
+    {
+        Save();
     }
 
 
