@@ -14,6 +14,9 @@ public class EnemyMovement : MonoBehaviour
     public float rotationSpeed;
     public NavMeshAgent agent;
 
+    public AudioSource growlSFX;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,9 @@ public class EnemyMovement : MonoBehaviour
         {
             agent.destination = playerPos.position;
             //transform.parent.position = Vector3.MoveTowards(transform.parent.position, playerPos.position, Time.deltaTime * speed);
+
+            growlSFX.Play();
+
 
             // The step size is equal to speed times frame time.
             // Rotate towards the player.
