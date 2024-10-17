@@ -79,6 +79,9 @@ public class PlayerHealth : MonoBehaviour
         fpsController.enabled = false;
         enemyCollider.enabled = false;
         enemyCollider.GetComponentInParent<NavMeshAgent>().speed = 0;
+        Vector3 enemyPos = enemyCollider.transform.position;
+        enemyPos.Set(enemyPos.x, playerCollider.transform.position.y, enemyPos.z);
+        playerCollider.transform.LookAt(enemyPos);
         yield return new WaitForSeconds(3);
 
 
