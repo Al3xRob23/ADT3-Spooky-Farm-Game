@@ -13,6 +13,8 @@ public class SimpleFPSController : MonoBehaviour
     public float sprintSpeed = 7.0f;
     public float mouseSensitivity = 2.0f;
 
+    public AudioSource footstepaudio;
+
 #pragma warning disable IDE0051 // Remove unused private members
     float verticalRotation = 0;
 #pragma warning restore IDE0051 // Remove unused private members
