@@ -8,6 +8,7 @@ public class VolumeManager : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider sfxSlider;
     [SerializeField] Slider masterSlider;
+    [SerializeField] Slider footStepsSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class VolumeManager : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", 1);
         PlayerPrefs.SetFloat("sfxVolume", 1);
         PlayerPrefs.SetFloat("masterVolume", 1);
+        PlayerPrefs.SetFloat("footStepsVolume", 1);
     }
 
     public void Load()
@@ -36,6 +38,7 @@ public class VolumeManager : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
         masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
+        footStepsSlider.value = PlayerPrefs.GetFloat("footStepsVolume");
     }
 
     public void Save()
@@ -43,6 +46,7 @@ public class VolumeManager : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
         PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
         PlayerPrefs.SetFloat("masterVolume", masterSlider.value);
+        PlayerPrefs.SetFloat("foorStepsVolume", footStepsSlider.value);
     }
 
     public void OnDestroy()
