@@ -23,7 +23,7 @@ public class MixerController : MonoBehaviour
     }
     public void SetFootstepsVolume(float sliderValue)
     {
-        myAudioMixer.SetFloat("Footsteps Audio", Mathf.Log10(sliderValue) * 20);
+        myAudioMixer.SetFloat("Footsteps", Mathf.Log10(sliderValue) * 20);
     }
 
 }

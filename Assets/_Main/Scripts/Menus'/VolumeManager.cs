@@ -46,7 +46,7 @@ public class VolumeManager : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
         PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
         PlayerPrefs.SetFloat("masterVolume", masterSlider.value);
-        PlayerPrefs.SetFloat("foorStepsVolume", footStepsSlider.value);
+        PlayerPrefs.SetFloat("footStepsVolume", footStepsSlider.value);
     }
 
     public void OnDestroy()
