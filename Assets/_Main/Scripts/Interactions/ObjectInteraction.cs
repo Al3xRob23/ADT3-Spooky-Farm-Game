@@ -11,6 +11,9 @@ public class ObjectInteraction : MonoBehaviour
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 #pragma warning disable 0108
 
+    public AudioSource chestOpenClip;
+
+
     void Update() 
     {
         int layerMask = 1 << 5;
@@ -30,6 +33,7 @@ public class ObjectInteraction : MonoBehaviour
                     if (hitWorldItem.IsCollectableByInteraction)
                     {
                         hitWorldItem.CollectItem();
+                        chestOpenClip.Play();
                     }
                 }
 

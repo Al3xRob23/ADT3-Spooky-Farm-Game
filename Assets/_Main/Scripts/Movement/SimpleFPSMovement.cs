@@ -1,9 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using JetBrains.Annotations;
-using static UnityEngine.UI.Image;
 //using UnityEditor.PackageManager;
 
 public class SimpleFPSController : MonoBehaviour
@@ -138,7 +133,8 @@ public class SimpleFPSController : MonoBehaviour
                 lastViewedInteractable = highlightInteractable;
             }
 
-        }else if(lastViewedInteractable != null)
+        }
+        else if (lastViewedInteractable != null)
         {
             lastViewedInteractable.UnHighlight();
 
@@ -146,9 +142,9 @@ public class SimpleFPSController : MonoBehaviour
 
 
 
-            //Sprinting
+        //Sprinting
 
-            bool isRunning = (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W));
+        bool isRunning = (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W));
         bool isNotRunning = Input.GetKeyUp(KeyCode.LeftShift);
 
 
@@ -190,7 +186,7 @@ public class SimpleFPSController : MonoBehaviour
         //Replace with animation collision script
         //if (Input.GetKeyDown(KeyCode.Mouse0))
         //{
-            
+
 
         //    if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, 3, layerMask))
         //    {
@@ -214,13 +210,13 @@ public class SimpleFPSController : MonoBehaviour
         //        }
 
 #pragma warning disable CS8321 // Local function is declared but never used
-                void OnCollisionStay(Collision collision)
-                {
-                    if (collision.gameObject.tag == "Ground")
-                    {
-                        isGrounded = true;
-                    }
-                }
+        void OnCollisionStay(Collision collision)
+        {
+            if (collision.gameObject.tag == "Ground")
+            {
+                isGrounded = true;
+            }
+        }
 #pragma warning restore CS8321 // Local function is declared but never used
 
         //    }
