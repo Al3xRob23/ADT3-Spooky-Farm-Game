@@ -66,7 +66,7 @@ public class SimpleFPSController : MonoBehaviour
     //    Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation * mouseSensitivity * Time.deltaTime, 0, 0);
     //}
 
-
+    Vector3 lastPos;
     void Update()
     {
         currentSpeed = movementSpeed;
@@ -86,11 +86,23 @@ public class SimpleFPSController : MonoBehaviour
         //speed = transform.rotation * speed;
 
         //characterController.SimpleMove(speed);
+        
         // Player Movement
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
         characterController.Move(move * currentSpeed * Time.deltaTime);
+
+        if (gameObject.transform.position != lastPos)
+        {
+            footstepaudio.UnPause();
+        }
+        else
+        {
+            footstepaudio.Pause();
+        }
+
+        lastPos = gameObject.transform.position;
 
         // Gravity.
         if (isGrounded && velocity.y < 0)
