@@ -10,10 +10,12 @@ public class AnimationHitEvent : MonoBehaviour
     public GameObject parent;
     //public void AE_Hit(string s) => Debug.Log("AE_Hit called at" + Time.time + " with a value of " + s);
     public Animator Animator;
+    public AudioSource clip;
 
     public void AE_Hit()
     {
         parent.GetComponent<SimpleFPSController>().EnemyHit();
+        clip.Play();
         Invoke("SetObjRotation", 0.8f); 
     }
 
