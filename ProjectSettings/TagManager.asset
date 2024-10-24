@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Food
   - NPC
+  - NPCDialogue
   layers:
   - Default
   - TransparentFX

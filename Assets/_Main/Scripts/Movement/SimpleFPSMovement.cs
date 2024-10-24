@@ -231,6 +231,8 @@ public class SimpleFPSController : MonoBehaviour
                 isGrounded = true;
             }
         }
+
+
 #pragma warning restore CS8321 // Local function is declared but never used
 
         //    }

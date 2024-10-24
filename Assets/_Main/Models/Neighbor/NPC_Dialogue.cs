@@ -9,6 +9,7 @@ public class NPC_Dialogue : MonoBehaviour
     public GameObject canvas;
     public GameObject NeighborNPC;
     public Animator Anim;
+    public GameObject NPCMarker;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class NPC_Dialogue : MonoBehaviour
         canvas.SetActive(true);
         Anim.Play("Idle");
         NeighborNPC.GetComponents<Animator>();
-        
+        NPCMarker.SetActive(false);
     }
 
     private void OnTriggerExit(Collider player)
@@ -28,5 +29,3 @@ public class NPC_Dialogue : MonoBehaviour
         Anim.Play("Dancing");
     }
 }
-
-
